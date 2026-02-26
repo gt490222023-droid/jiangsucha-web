@@ -1,0 +1,225 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+    "Microsoft YaHei", system-ui, sans-serif;
+}
+
+/* 整体居中 */
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f5f5;
+}
+
+.container {
+  width: 90%;
+  max-width: 480px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 28px 24px 30px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.sub-title {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 22px;
+}
+
+.form-item {
+  margin-bottom: 18px;
+}
+
+.label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.input,
+.select {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  padding: 10px 14px;
+  font-size: 15px;
+  background-color: #fafafa;
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: #ff4a3d;
+  background-color: #fff;
+}
+
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #bbb 50%),
+    linear-gradient(135deg, #bbb 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(50% - 3px),
+    calc(100% - 13px) calc(50% + 3px);
+  background-size: 7px 7px, 7px 7px;
+  background-repeat: no-repeat;
+}
+
+.btn {
+  width: 100%;
+  margin-top: 4px;
+  border: none;
+  padding: 11px 0;
+  background: #ff4a3d;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.1s ease;
+}
+
+.btn:hover {
+  opacity: 0.95;
+  box-shadow: 0 6px 16px rgba(255, 74, 61, 0.4);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* 结果卡片 */
+.result-card {
+  margin-top: 24px;
+  padding: 18px 16px 16px;
+  border-radius: 18px;
+  color: #fff;
+}
+
+.result-card.hidden {
+  display: none;
+}
+
+/* 命中：红火渐变 */
+.result-card.win {
+  background: linear-gradient(135deg, #ff4a3d, #ff9f3d);
+  box-shadow: 0 10px 28px rgba(255, 74, 61, 0.45);
+  animation: boom 800ms ease-out;
+}
+
+/* 未命中：暖色柔和 */
+.result-card.miss {
+  background: linear-gradient(135deg, #ffb347, #ffcc70);
+  box-shadow: 0 8px 24px rgba(255, 179, 71, 0.4);
+  animation: soft 800ms ease-out;
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.result-emoji {
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.result-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.result-main {
+  font-size: 15px;
+  margin-top: 4px;
+}
+
+.result-bless {
+  font-size: 14px;
+  margin-top: 6px;
+  opacity: 0.9;
+}
+
+/* 动画 */
+@keyframes boom {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes soft {
+  0% {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 小屏优化 */
+@media (max-width: 360px) {
+  .card {
+    padding: 20px 16px 22px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .sub-title {
+    font-size: 13px;
+  }
+}
+
+/* 羊毛提示卡 —— 温和黄橙色底 */
+.notice-card {
+  margin-top: 24px;
+  padding: 16px 14px;
+  background: #fff9e6;
+  border-left: 6px solid #ffb200;
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-start;
+  box-shadow: 0 4px 10px rgba(255, 178, 0, 0.15);
+}
+
+.notice-emoji {
+  font-size: 22px;
+  margin-right: 10px;
+  margin-top: 2px;
+}
+
+.notice-text {
+  font-size: 15px;
+  color: #7a5a00;
+  line-height: 1.55;
+}
+
+.notice-text b {
+  color: #c47f0e;
+}

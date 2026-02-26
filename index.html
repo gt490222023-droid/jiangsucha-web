@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>奖速查 - 发票便民查询工具</title>
+    <meta
+      name="description"
+      content="奖速查 - 输入发票号码，一键查询是否匹配活动记录，便民查询工具。"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="container">
+        <div class="card">
+          <h1 class="title">奖速查</h1>
+          <p class="sub-title">
+            先选本期，再输入发票号码，看看这期喜不喜迎财神～
+          </p>
+
+          <div class="form-item">
+            <label class="label" for="period-select">选择期数</label>
+            <select id="period-select" class="select">
+              <!-- 选项由 script.js 中的 periods.json 动态填充 -->
+            </select>
+          </div>
+
+          <div class="form-item">
+            <label class="label" for="invoice-input">发票号码</label>
+            <input
+              id="invoice-input"
+              class="input"
+              type="text"
+              placeholder="请输入发票号码"
+            />
+          </div>
+
+          <button id="search-btn" class="btn">查询</button>
+
+          <div id="result-card" class="result-card hidden">
+            <div class="result-header">
+              <span id="result-emoji" class="result-emoji">🎉</span>
+              <span id="result-title" class="result-title">恭喜老板中奖！</span>
+            </div>
+            <div id="result-main" class="result-main"></div>
+            <div id="result-bless" class="result-bless"></div>
+          </div>
+
+          <!-- 羊毛提示卡 -->
+          <div class="notice-card">
+            <div class="notice-emoji">📢</div>
+            <div class="notice-text">
+              关注微信公众号 <b>南宁羊毛基地</b>  
+              方便以后每期查询抽奖，还为靓仔靓女们速递各种羊毛福利～
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
